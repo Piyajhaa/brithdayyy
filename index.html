@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Wish 🎂</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stage">
+
+  <!-- Step 1: Birthday Wish -->
+  <div id="step1" class="step active">
+    <div class="step1-content">
+      <h1>Happy Birthday Ishu 💙</h1>
+      <div class="floating-emojis">🌸💖✨
+        <img src="image/happy birthday.png" class="sticker">
+      </div>
+      <button class="btn" id="startBtn">Start</button>
+    </div>
+  </div>
+
+  <!-- Step 2: Q&A Game -->
+  <div id="step2" class="step">
+    <div class="qa-wrapper"> 
+      <div class="qa-container">
+        <h2 id="questionText">Do you hate jews?</h2>
+        <div class="options">
+          <button class="optionBtn">Yes</button>
+          <button class="optionBtn">Who don't</button>
+        </div>
+        <div id="stickerContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 3: Final Message -->
+  <div id="step3" class="step">
+    <!-- Final message + emoji rain inserted via JS -->
+  </div>
+
+</div>
+<audio id="birthdayMusic" loop>
+  <source src="music/preety little baby.mp3" type="audio/mpeg">>
+</audio>
+
+<script src="app.js"></script>
+</body>
+</html>

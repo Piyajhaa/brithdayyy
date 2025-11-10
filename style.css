@@ -1,0 +1,193 @@
+/* Body & Stage */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Arial;
+}
+h1 {
+  text-shadow: 2px 2px 0 #ff00ff, 4px 4px 0 #00ffff, 6px 6px 0 #ffffff;
+}
+body {
+  background-image: url("https://i.pinimg.com/736x/57/3c/8f/573c8f69e15f1ed94d4bbfcd360982e6.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+/* Steps */
+.step {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.step.active {
+  display: flex;
+}
+
+/* Step1 content centering */
+.step1-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: rgb(227, 29, 148);
+  text-shadow: #f6072b;
+
+}
+
+/* Buttons */
+button.btn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 0;
+  background: #FF8AB8;
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.options button {
+  margin: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #FFB6C1;
+  cursor: pointer;
+}
+
+/* Floating emojis */
+.floating-emojis {
+  font-size: 28px;
+  animation: float 2s infinite alternate;
+  margin: 20px 0;
+  position: relative;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Birthday sticker fixed right-hand side */
+.floating-emojis .sticker {
+  width: 120px;
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  animation: floatSticker 5s ease-in-out infinite;
+}
+
+@keyframes floatSticker {
+  0% { transform: translateY(-50%) translateY(0); }
+  50% { transform: translateY(-50%) translateY(-15px); }
+  100% { transform: translateY(-50%) translateY(0); }
+}
+
+/* Q&A container */
+.qa-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  width: 95%;
+  max-width: 600px;   
+  height: 100%;       
+  padding: 40px;     
+  text-align: center;
+  background-image: url('https://i.pinimg.com/736x/d6/b7/ef/d6b7efc69478385e15ece8bf2bde81d6.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* Stickers */
+.sticker {
+  width: 80px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.sticker.pop {
+  animation: pop 0.5s ease forwards;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Step3 flexbox for final message */
+.final-message-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('https://i.pinimg.com/736x/b0/e2/65/b0e2650dc8d0be0e55edcf26559c0d3d.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 250, 250, 0.3);
+  color: rgb(11, 11, 11);
+  text-align: center;
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  /* ✨ Fixed + added neon glow effect ✨ */
+  text-shadow: 
+    0 0 10px #ff00ff,
+    0 0 20px #00ffff,
+    0 0 30px #ff00ff,
+    2px 2px 4px rgba(255, 255, 255, 0.8);
+  z-index: 2;
+}
+
+
+/* Emoji rain */
+.emoji-rain {
+  position: absolute;
+  font-size: 24px;
+  top: -50px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+/* Emoji rain falling animation */
+@keyframes fall {
+  0% { transform: translateY(-50px); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.emoji-rain {
+  position: absolute;
+  top: -50px; /* start above screen */
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
